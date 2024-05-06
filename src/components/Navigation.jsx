@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import React from "react";
 
 const Navigation = () => {
   const items = [
@@ -11,11 +12,16 @@ const Navigation = () => {
   ];
   return (
     <nav>
-      <ul>
+      <ul className="flex flex-col justify-center items-center   sm:flex-row  md:space-x-2 ">
         {items.map((item) => {
           return (
             <li key={item.id}>
-              <NavLink to={item.to}>{item.name}</NavLink>
+              <NavLink
+                to={item.to}
+                className="text-white  xl:p-4 hover:bg-stone-700  py-2 rounded-md text-sm font-medium "
+              >
+                {item.name}
+              </NavLink>
             </li>
           );
         })}
