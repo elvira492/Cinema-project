@@ -24,7 +24,11 @@ const Header = () => {
     <div className="bg-neutral-800 text-white py-4 sticky top-0 z-10 opacity-90">
       <div className="container mx-auto flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
-          <h1 className="text-xl font-bold">Fantasy Cinema</h1>
+          <NavLink to="/">
+            <h1 className="text-xl font-bold" onClick={handleCloseMenu}>
+              Fantasy Cinema
+            </h1>
+          </NavLink>
         </div>
 
         {/* Burger-Button für mobiles Menü */}
@@ -54,10 +58,18 @@ const Header = () => {
           )}
 
           {/* Hinzugefügte outline Icons neben Burger Button für User und Cart */}
-          <NavLink to="/user" className="text-white ml-4">
+          <NavLink
+            to="/user"
+            className="text-white ml-4"
+            onClick={handleCloseMenu}
+          >
             <UserCircleIcon className="h-6 w-6 text-white" />
           </NavLink>
-          <NavLink to="/cart" className="text-white ml-4">
+          <NavLink
+            to="/cart"
+            className="text-white ml-4"
+            onClick={handleCloseMenu}
+          >
             <ShoppingCartIcon className="h-6 w-6 text-white" />
           </NavLink>
         </div>
@@ -74,4 +86,3 @@ const Header = () => {
 export default Header;
 
 //hier im Header machen wir Burger Button mit tailwindCss UI -für mobiles Menü; platzieren Navlinks-Icons für User und Cart-für mobiles Menü; platzieren normale Navigation, wird nur bei großen Bildschirmen gezeigt
-//testGithub1
