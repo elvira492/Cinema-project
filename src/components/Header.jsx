@@ -74,3 +74,4 @@ const Header = () => {
 export default Header;
 
 //hier im Header machen wir Burger Button mit tailwindCss UI -für mobiles Menü; platzieren Navlinks-Icons für User und Cart-für mobiles Menü; platzieren normale Navigation, wird nur bei großen Bildschirmen gezeigt
+//testGithub1
