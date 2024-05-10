@@ -23,8 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# API-key nicht hochladen
-.apiKey
-apiKeys.js
-.test
-.test2
+# API-keys nicht hochladen
+src/**/apiKeys.js
