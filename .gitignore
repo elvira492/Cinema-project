@@ -27,3 +27,4 @@ dist-ssr
 .apiKey
 apiKeys.js
 .test
+.test2
