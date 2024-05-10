@@ -1,25 +1,24 @@
-// axios statt fetch für eine breite Browserunterstützung
+// axios statt fetch
 import axios from "axios";
+import { apiKeyForIDs } from "./apiKey";
 
 const options = {
   method: "GET",
   url: "https://imdb8.p.rapidapi.com/title/v2/get-coming-soon",
   params: {
     comingSoonType: "MOVIE",
-    first: "10",
+    first: "1",
   },
   headers: {
-    "X-RapidAPI-Key": "6be6113f76msh1a5b13e08899c01p183a59jsnb88b9195d249",
+    "X-RapidAPI-Key": apiKeyForIDs,
     "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
   },
 };
 
-// Funktion die gefetchte Daten (IDs) wiedergibt, (braucht keine Hooks -> keine Komponente)
-
 const fetchMovieIDs = async () => {
   try {
     const response = await axios.request(options);
-    //  array contains ID packed in nested objects
+    //  array contains IDs packed in nested objects
     const array = response.data.data.comingSoon.edges;
     // extract IDs with map()
     return array.map((object) => object.node.id);
