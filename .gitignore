@@ -25,3 +25,4 @@ dist-ssr
 
 # API-keys nicht hochladen
 src/**/apiKeys.js
+src/components/fetch/x.js
