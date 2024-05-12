@@ -27,7 +27,7 @@ const fetchMovieData = async (movieID) => {
       title: movieTitle,
       runtime: movieRuntime,
       genre: movieGenre,
-      Director: movieDirector,
+      director: movieDirector,
       writer: movieWriter,
       actors: movieActors,
       plot: moviePlot,
