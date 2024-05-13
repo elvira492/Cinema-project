@@ -9,7 +9,7 @@ function ContactPage() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-8 lg:gap-36 p-8 md:p-16 h-5/6">
+    <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-8 lg:gap-36 p-8 md:p-16 ">
       {/* Left */}
       <div className="max-w-lg md:max-w-sm lg:max-w-lg  md:px-16 rounded-md border border-gray-300 md:py-32 p-16">
         <h3 className="text-xl font-semibold mb-4 text-center">
