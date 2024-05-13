@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  background-color: rgba(38, 38, 38, 255);
+.height1 {
+  height: 60vh;
 }
- */

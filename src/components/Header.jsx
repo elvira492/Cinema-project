@@ -21,11 +21,14 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-neutral-800 text-white py-4 sticky top-0 z-10 opacity-90">
+    <div className="bg-neutral-800 text-white py-4 sticky top-0 z-10 opacity-90 shadow-xl">
       <div className="container mx-auto flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
           <NavLink to="/">
-            <h1 className="text-xl font-bold" onClick={handleCloseMenu}>
+            <h1
+              className="text-xl font-bold shadow-lg"
+              onClick={handleCloseMenu}
+            >
               Fantasy Cinema
             </h1>
           </NavLink>
