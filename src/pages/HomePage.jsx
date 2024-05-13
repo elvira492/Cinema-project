@@ -9,8 +9,6 @@ const Homepage = () => {
         <MovieT movieIndex={2} />
         <MovieT movieIndex={3} />
         <MovieT movieIndex={4} />
-      </div>
-      <div className="flex flex-wrap justify-around m-5">
         <MovieT movieIndex={5} />
         <MovieT movieIndex={6} />
         <MovieT movieIndex={7} />

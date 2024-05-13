@@ -62,55 +62,80 @@ const MovieT = ({ movieIndex }) => {
 
   // render MovieDATA:
   return (
-    <div className={` bg-blue-500 ${detailsVisible ? "w-full" : "w-50 m-5"}  `}>
+    <div
+      // position relative for the spinner-position
+      className={` border-2 relative ${
+        detailsVisible ? "w-full" : " w-[240px] h-[430px]  m-5"
+      }  `}
+    >
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
       {!loading ? (
         <div
-          className={`flex flex-wrap p-5 ${detailsVisible ? "" : " flex-col"}`}
+          className={`flex flex-wrap justify-center p-5 ${
+            detailsVisible ? "" : "flex-col"
+          }`}
         >
           <h1>{movieIndex}</h1>
           <img
             src={movieData.poster}
             alt="movie-poster"
-            style={{ width: "160px", height: "200px" }}
+            // img width and height -100px
+            style={{ width: "200px", height: "324px" }}
             onClick={() => showDetails()}
+            className={`${
+              !detailsVisible ? "hover:scale-110 transition-all" : ""
+            }`}
           />
           <div
             ref={refToScroll}
-            className={!detailsVisible ? "hidden" : "relative w-60"}
+            className={!detailsVisible ? "hidden" : "relative w-96 m-5"}
           >
-            <h2>{movieData.title}</h2>
+            <h2 className="font-extrabold">{movieData.title}</h2>
 
-            <p>
+            <p className="text-sm border-2 mt-1">
               <span>Director: </span>
               {movieData.director},<br /> <span>Writer: </span>
               {movieData.writer}
-            </p>
-            <p>
+              <br />
               <span>Main Actors: </span>
               {movieData.actors}
             </p>
-            <p>{movieData.plot}</p>
-            <p>
+            <p className="text-semibold m-2">{movieData.plot}</p>
+            <p className="text-sm">
               <span>Genre: </span>
               {movieData.genre}
-            </p>
-            <p>
+              <br />
               <span>Runtime: </span>
               {movieData.runtime}
             </p>
             <p>little calender-table</p>
-            <button>Buy Tickets</button>
-            <button onClick={showDetails} className="absolute top-0 right-0">
-              X
+            {/* to do:Button-css-class */}
+            <button className="border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
+              Buy Tickets
+            </button>
+            <button
+              onClick={showDetails}
+              className="absolute top-0 right-0 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
+            >
+              x
             </button>
           </div>
-          <button className={detailsVisible ? "hidden" : ""}>
+          <button
+            className={
+              detailsVisible
+                ? "hidden"
+                : "border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all mt-4"
+            }
+          >
             Buy Tickets
           </button>
         </div>
       ) : (
-        <SquareLoader color="#584b7e" size={100} />
+        <SquareLoader
+          color="#584b7e"
+          size={100}
+          className="absolute top-[165px] left-[70px]"
+        />
       )}
     </div>
   );
