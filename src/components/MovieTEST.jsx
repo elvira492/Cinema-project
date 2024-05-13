@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SquareLoader } from "react-spinners";
 
 // FOR TESTING:
@@ -19,6 +19,8 @@ const movieObject = {
 const MovieT = ({ movieIndex }) => {
   const [movieData, setMovieData] = useState(movieObject);
   const [loading, setLoading] = useState(true);
+  const [detailsVisible, setDetailsVisible] = useState(false);
+  const refToScroll = useRef(null);
 
   useEffect(() => {
     setLoading(true);
@@ -31,24 +33,54 @@ const MovieT = ({ movieIndex }) => {
     }, 2000);
   }, []);
 
-  // MovieDATA rendern:
+  // click: showDetails
+  const showDetails = () => {
+    setDetailsVisible(!detailsVisible);
+    // SCROLL: element will be in the visible area
+    // scrolling only takes place after the 2nd click, which is probably because the DOM-element(movie details) is not yet ready
+    // if (refToScroll.current) {
+    //   refToScroll.current.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "end",
+    //   });
+    // }
+  };
 
+  // 1. Component will be rendered
+  // 2. CLICK on the Element( rendering movie details): Ref assigned to this element
+  // 3. After rendering, the useEffect() hook is triggered because state: detailsVisible has been updated
+  // while the ref has been updated too! And scrolling works with the first click
+  // (but only if the movie details have been rendered -> ref assigned):
+  useEffect(() => {
+    if (refToScroll.current) {
+      refToScroll.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
+  }, [detailsVisible]);
+
+  // render MovieDATA:
   return (
-    <div
-      className={` m-5 bg-blue-500 ${movieIndex === 4 ? "w-full" : "w-40"}  `}
-    >
+    <div className={` bg-blue-500 ${detailsVisible ? "w-full" : "w-50 m-5"}  `}>
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
       {!loading ? (
-        <div className="">
-          {" "}
+        <div
+          className={`flex flex-wrap p-5 ${detailsVisible ? "" : " flex-col"}`}
+        >
           <h1>{movieIndex}</h1>
-          <h2>{movieData.title}</h2>
           <img
             src={movieData.poster}
             alt="movie-poster"
             style={{ width: "160px", height: "200px" }}
+            onClick={() => showDetails()}
           />
-          <div className="hidden">
+          <div
+            ref={refToScroll}
+            className={!detailsVisible ? "hidden" : "relative w-60"}
+          >
+            <h2>{movieData.title}</h2>
+
             <p>
               <span>Director: </span>
               {movieData.director},<br /> <span>Writer: </span>
@@ -68,8 +100,14 @@ const MovieT = ({ movieIndex }) => {
               {movieData.runtime}
             </p>
             <p>little calender-table</p>
+            <button>Buy Tickets</button>
+            <button onClick={showDetails} className="absolute top-0 right-0">
+              X
+            </button>
           </div>
-          <button>Buy Tickets</button>
+          <button className={detailsVisible ? "hidden" : ""}>
+            Buy Tickets
+          </button>
         </div>
       ) : (
         <SquareLoader color="#584b7e" size={100} />
