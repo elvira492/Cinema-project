@@ -16,31 +16,33 @@ function ContactPage() {
           Contact Information
         </h3>
         <div className="mb-4">
-          <p className="font-semibold">Opening Hours</p>
           <p>
-            Fantasy Cinema is open: Monday – Friday from 11:00 PM onwards
-            Saturday – Sunday 15 minutes before the start of the first
-            screening. You can find a program overview{" "}
-            <a href="/program">here</a>.
+            Reservations via email or through the contact form are not possible.
+            Corresponding emails will be deleted without response.
           </p>
         </div>
         <div className="mb-4">
-          <p className="font-semibold">Directions to Fantasy Cinema</p>
           <p>
-            Fantasy Cinema is located directly at the intersection of
-            Hans-Sachs- and Ickstattstraße in the Glockenbachviertel district
-            and is easily accessible on foot from the Sendlinger Tor or
-            Fraunhoferstraße train stations.
+            <strong>Office Opening Hours:</strong>
+          </p>
+          <p className="mb-4">Daily at 11:00 PM</p>
+          <p className="mb-2">
+            For all other inquiries regarding your cinema visit, you can reach
+            us during opening hours at the following telephone number:{" "}
+            <a href="tel:+555554433 ">(555)554433 </a>
+          </p>
+          <p className="mb-4">
+            You can also email us at{" "}
+            <a href="mailto:FantasyCinema@gmail.com">FantasyCinema@gmail.com</a>
           </p>
         </div>
-        <div className="mb-4">
-          <p className="font-semibold">Public Transportation</p>
-          <p>
-            U1/2: Fraunhoferstraße Station, U3/6: Sendlinger Tor Station Tram
-            16/17/18: Müllerstraße Stop By Car Public parking spaces around the
-            cinema are very limited. Please consider walking, cycling, or using
-            public transportation (MVG).
-          </p>
+        <div className="flex justify-center">
+          <button className="w-48 px-4 py-2 bg-gray-900 text-white font-semibold rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+            <a href="mailto:FantasyCinema@gmail.com">Email Us</a>
+          </button>
+          <button className="w-48 ml-4 px-4 py-2 bg-gray-900 text-white font-semibold rounded-md shadow-sm hover:bg-gray-500 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-50">
+            <a href="tel:+555554433 ">Call us </a>
+          </button>
         </div>
       </div>
       {/* Right */}
