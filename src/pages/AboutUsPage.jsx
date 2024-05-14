@@ -12,7 +12,7 @@ const AboutUsPage = () => {
           center={centerCoordinates}
           zoom={15}
           style={{ height: "50vh", width: "100%" }}
-          className="rounded-md shadow-lg"
+          className="rounded-md shadow-lg z-0"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
