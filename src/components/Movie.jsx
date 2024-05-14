@@ -53,7 +53,7 @@ const Movie = ({ movieID, movieIndex }) => {
     if (refToScroll.current) {
       refToScroll.current.scrollIntoView({
         behavior: "smooth",
-        block: "end",
+        block: "center",
       });
     }
   }, [detailsVisible]);
@@ -88,7 +88,7 @@ const Movie = ({ movieID, movieIndex }) => {
           />
           <div
             ref={refToScroll}
-            className={!detailsVisible ? "hidden" : "relative w-96 m-5"}
+            className={!detailsVisible ? "hidden" : "relative w-96 p-5"}
           >
             <h2 className="font-extrabold">{movieData.title}</h2>
 
@@ -110,12 +110,12 @@ const Movie = ({ movieID, movieIndex }) => {
             </p>
             <p>little calender-table</p>
             {/* to do:Button-css-class */}
-            <button className=" absolute bottom-0 right-0 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
+            <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
               Buy Tickets
             </button>
             <button
               onClick={showDetails}
-              className="absolute top-0 right-0 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
+              className="absolute top-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
             >
               x
             </button>
