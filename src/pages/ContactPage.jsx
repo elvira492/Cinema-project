@@ -11,7 +11,7 @@ function ContactPage() {
   return (
     <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-8 lg:gap-36 p-8 md:p-16 h-5/6">
       {/* Left */}
-      <div className="max-w-lg md:max-w-sm lg:max-w-lg  md:px-16 rounded-md border border-gray-300 md:py-32 p-16">
+      <div className="max-w-lg md:max-w-sm lg:max-w-lg  md:px-16 rounded-md border border-gray-300 lg:py-28 p-12">
         <h3 className="text-xl font-semibold mb-4 text-center">
           Contact Information
         </h3>
@@ -48,7 +48,7 @@ function ContactPage() {
       {/* Right */}
       <div className="flex-1 max-w-lg items-center ">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-1xl pb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-1xl lg:pb-4">
             Please leave us a message
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
