@@ -12,21 +12,9 @@ const Footer = () => {
         <p>Wonder Way 6, Fantasy Harbor</p>
       </div>
       <div className="flex items-center">
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mr-4"
-        >
-          <SocialIcon url="https://www.instagram.com/" bgColor="#ff5a01" />
-        </a>
-        <a
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SocialIcon url="https://www.facebook.com/" bgColor="#4267B2" />
-        </a>
+        <SocialIcon url="https://www.instagram.com/" bgColor="#ff5a01" />
+
+        <SocialIcon url="https://www.facebook.com/" bgColor="#4267B2" />
       </div>
     </div>
   );
