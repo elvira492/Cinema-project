@@ -1,65 +1,66 @@
 import { useEffect, useRef, useState } from "react";
-import fetchMovieData from "../components/fetch/FetchMovieData";
 import { SquareLoader } from "react-spinners";
 
-// Id is for fetching the movie data, but index is for the self-defined order of the movies (added to the movieData)
-// eslint-disable-next-line react/prop-types
-const Movie = ({ movieID, movieIndex }) => {
-  const [movieData, setMovieData] = useState({});
-  const [loaded, setLoaded] = useState(false);
+// FOR TESTING:
+const movieObject = {
+  title: "Robot Dreams",
+  runtime: "102 min",
+  genre: "Animation, Drama, Music",
+  director: "Pablo Berger",
+  writer: "Pablo Berger, Sara Varon",
+  actors: "Ivan Labanda, Albert Trifol Segarra, Rafa Calvo",
+  plot: "The adventures and misfortunes of Dog and Robot in New York City during the 1980s.",
+  poster:
+    "https://m.media-amazon.com/images/M/MV5BMzE4ZDlmNzUtY2QyZS00MmZiLWE1ZTgtOTcyNTEzNmNkODEzXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
+};
+// ______________________
+
+// Id is for fetching the movie data, but index is for the own order of the movies (added to the movieData)
+const MovieT = ({ movieIndex }) => {
+  const [movieData, setMovieData] = useState(movieObject);
+  const [loading, setLoading] = useState(true);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const refToScroll = useRef(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchMovieData(movieID);
-        // the MovieData-Object should contain an index for further processing (calendar:Date assignment)
-        const newData = {
-          ...data,
-          index: movieIndex,
-        };
-        // update movieData-state
-        setMovieData(newData);
-        // AND save movie data in localStorage
-        localStorage.setItem(`movie${movieIndex}`, JSON.stringify(newData));
-
-        // + Data has been loaded: update loaded-state
-        setLoaded(true);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    const movie = localStorage.getItem(`movie${movieIndex}`);
+    setLoading(true);
     setTimeout(() => {
-      if (movie) {
-        // if data already exists in localStorage update movieData-state:
-        setMovieData(JSON.parse(movie));
-        setLoaded(true);
-      } else {
-        fetchData();
-      }
-    }, 500);
-  }, [movieID, movieIndex]);
+      setLoading(false);
+      setMovieData((prevData) => ({
+        ...prevData,
+        index: movieIndex,
+      }));
+    }, 2000);
+  }, []);
 
-  // Clickhandler: show details
+  // click: showDetails
   const showDetails = () => {
     setDetailsVisible(!detailsVisible);
+    // SCROLL: element will be in the visible area
+    // scrolling only takes place after the 2nd click, which is probably because the DOM-element(movie details) is not yet ready
+    // if (refToScroll.current) {
+    //   refToScroll.current.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "end",
+    //   });
+    // }
   };
 
-  // Second useEffect for scrolling to the details of the movieComponent after rendering by clicking the image
-  // ref assigned to this element AFTER rendering the element by click (detailsVisible updated)
+  // 1. Component will be rendered
+  // 2. CLICK on the Element(rendering movie-details): Ref assigned to this element
+  // 3. After rendering, the useEffect() hook is triggered because state: detailsVisible has been updated
+  // while the ref has been updated too! And scrolling works with the first click
+  // (but only if the movie details have been rendered -> ref assigned):
   useEffect(() => {
     if (refToScroll.current) {
       refToScroll.current.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "end",
       });
     }
   }, [detailsVisible]);
 
-  // render MovieDATA---------------------------
-
+  // render MovieDATA:
   return (
     <div
       // position relative for the spinner-position
@@ -67,9 +68,8 @@ const Movie = ({ movieID, movieIndex }) => {
         detailsVisible ? "w-full" : " w-[200px] h-[360px]  m-5"
       }  `}
     >
-      {" "}
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
-      {loaded ? (
+      {!loading ? (
         <div
           className={`flex flex-wrap justify-center p-5 ${
             detailsVisible ? "" : "flex-col"
@@ -88,7 +88,7 @@ const Movie = ({ movieID, movieIndex }) => {
           />
           <div
             ref={refToScroll}
-            className={!detailsVisible ? "hidden" : "relative w-96 p-5"}
+            className={!detailsVisible ? "hidden" : "relative w-96 m-5"}
           >
             <h2 className="font-extrabold">{movieData.title}</h2>
 
@@ -110,12 +110,12 @@ const Movie = ({ movieID, movieIndex }) => {
             </p>
             <p>little calender-table</p>
             {/* to do:Button-css-class */}
-            <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
+            <button className="border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
               Buy Tickets
             </button>
             <button
               onClick={showDetails}
-              className="absolute top-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
+              className="absolute top-0 right-0 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
             >
               x
             </button>
@@ -141,4 +141,4 @@ const Movie = ({ movieID, movieIndex }) => {
   );
 };
 
-export default Movie;
+export default MovieT;
