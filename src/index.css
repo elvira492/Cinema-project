@@ -4,4 +4,10 @@
 
 .height1 {
   height: 60vh;
-}
+} /* carousel */
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+} /* für footer position */
