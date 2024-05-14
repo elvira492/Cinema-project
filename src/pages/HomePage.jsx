@@ -1,10 +1,11 @@
 import Movie from "../components/Movie";
 import movieIDs from "../components/fetch/movieIDs";
+import MyCarousel from "../components/Carousel";
 
 const Homepage = () => {
   return (
     <div>
-      Homepage
+      <MyCarousel />
       <div className="flex flex-wrap justify-around m-5">
         <Movie movieID={movieIDs.movie1} movieIndex={1} />
         <Movie movieID={movieIDs.movie2} movieIndex={2} />
@@ -17,6 +18,7 @@ const Homepage = () => {
         <Movie movieID={movieIDs.movie7} movieIndex={7} />
         <Movie movieID={movieIDs.movie8} movieIndex={8} />
       </div>
+    
     </div>
   );
 };

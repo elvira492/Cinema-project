@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  background-color: rgba(38, 38, 38, 255);
-}
- */
+.height1 {
+  height: 60vh;
+} /* carousel */
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+} /* für footer position */
