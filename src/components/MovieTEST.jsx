@@ -47,7 +47,7 @@ const MovieT = ({ movieIndex }) => {
   };
 
   // 1. Component will be rendered
-  // 2. CLICK on the Element( rendering movie details): Ref assigned to this element
+  // 2. CLICK on the Element(rendering movie-details): Ref assigned to this element
   // 3. After rendering, the useEffect() hook is triggered because state: detailsVisible has been updated
   // while the ref has been updated too! And scrolling works with the first click
   // (but only if the movie details have been rendered -> ref assigned):
@@ -65,7 +65,7 @@ const MovieT = ({ movieIndex }) => {
     <div
       // position relative for the spinner-position
       className={` border-2 relative ${
-        detailsVisible ? "w-full" : " w-[240px] h-[430px]  m-5"
+        detailsVisible ? "w-full" : " w-[200px] h-[360px]  m-5"
       }  `}
     >
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
@@ -79,11 +79,11 @@ const MovieT = ({ movieIndex }) => {
           <img
             src={movieData.poster}
             alt="movie-poster"
-            // img width and height -100px
-            style={{ width: "200px", height: "324px" }}
+            // img width and height adjusted
+            style={{ width: "160px", height: "260px" }}
             onClick={() => showDetails()}
             className={`${
-              !detailsVisible ? "hover:scale-110 transition-all" : ""
+              !detailsVisible ? "hover:scale-110 transition-all" : "mt-4"
             }`}
           />
           <div
@@ -134,7 +134,7 @@ const MovieT = ({ movieIndex }) => {
         <SquareLoader
           color="#584b7e"
           size={100}
-          className="absolute top-[165px] left-[70px]"
+          className="absolute top-[120px] left-[50px]"
         />
       )}
     </div>

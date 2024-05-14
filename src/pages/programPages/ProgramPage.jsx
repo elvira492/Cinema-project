@@ -10,16 +10,15 @@ const items = [
 const ProgramPage = () => {
   return (
     <div>
-      <h1>ProgramPage</h1>
-      <u className={"flex justify-center items-center p-2"}>
+      <ul className={"flex flex-row justify-center items-center gap-x-8 p-4"}>
         {items.map((item) => {
           return (
-            <li key={item.id}>
+            <li key={item.id} className="hover:underline">
               <NavLink to={item.to}>{item.name}</NavLink>
             </li>
           );
         })}
-      </u>
+      </ul>
       <Outlet />
     </div>
   );
