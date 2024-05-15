@@ -7,22 +7,22 @@ const MyCarousel = () => {
     <Carousel className="shadow-xl">
       <div className="height1 flex items-center justify-center bg-red-200">
         <img
-          src="/src/images/468d639f5fdba166a131f8d2fafe2072.jpg"
+          src="/src/images/view-3d-cinema-theatre-room.jpg"
           className="object-cover w-full h-full"
           alt="Bild 1"
         />
       </div>
       <div className="height1 flex items-center justify-center">
         <img
-          src="/src/images/712a972bb2f0003a776acad62c35734a.jpg"
+          src="/src/images/people-cinema-watching-movie.jpg"
           className="object-cover w-full h-full"
           alt="Bild 2"
         />
       </div>
-      <div className="height1 flex items-center justify-center">
+      <div className="height1 flex items-center justify-center overflow-y-auto">
         <img
-          src="/src/images/9445a8a9ab4a2c3ce380a2b6d26c2bc6.jpg"
-          className="object-cover w-full h-full"
+          src="/src/images/portrait-young-little-boy.jpg"
+          className="object-cover h-full w-full"
           alt="Bild 3"
         />
       </div>
@@ -33,3 +33,4 @@ const MyCarousel = () => {
 export default MyCarousel;
 
 //https://www.npmjs.com/package/react-responsive-carousel?activeTab=readme
+//images: https://www.freepik.com/

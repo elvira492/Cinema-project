@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .height1 {
-  height: 60vh;
-} /* carousel */
+  height: 70vh;
+}/* carousel */
 
 body {
   position: relative;
