@@ -82,17 +82,17 @@ const AboutUsPage = () => {
           <div className="flex justify-center text-center p-4">
             <img
               src="/public/static/images/saal.jpg"
-              alt=""
+              alt="saal"
               className="w-1/3 rounded-lg m-2"
             />
             <img
               src={`/public/static/images/film-projector.jpg`}
-              alt=""
+              alt="film-projector"
               className="w-1/3 rounded-lg m-2"
             />
             <img
               src={`/public/static/images/cinema.jpg`}
-              alt=""
+              alt="cinema"
               className="w-1/3 rounded-lg m-2 "
             />
           </div>
