@@ -15,15 +15,29 @@ const MyCarousel = () => {
       <div className="height1 flex items-center justify-center">
         <img
           src="/src/images/people-cinema-watching-movie.jpg"
-          className="object-cover w-full h-full"
+          className="object-contain w-full max-h-screen"
           alt="Bild 2"
         />
       </div>
-      <div className="height1 flex items-center justify-center overflow-y-auto">
+      <div className="height1 flex items-center justify-center">
         <img
           src="/src/images/portrait-young-little-boy.jpg"
-          className="object-cover h-full w-full"
+          className="object-contain max-h-screen w-full"
           alt="Bild 3"
+        />
+      </div>
+      <div className="height1 flex items-center justify-center">
+        <img
+          src="/src/images/3d-senior-man-watching-movie-cinema-with-popcorn.jpg"
+          className="object-contain max-h-screen w-full"
+          alt="Bild 4"
+        />
+      </div>
+      <div className="height1 flex items-center justify-center">
+        <img
+          src="/src/images/3d-rendering-person-watching-movie-with-popcorn.jpg"
+          className="object-contain max-h-screen w-full"
+          alt="Bild 5"
         />
       </div>
     </Carousel>
