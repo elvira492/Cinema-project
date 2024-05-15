@@ -64,7 +64,7 @@ const Movie = ({ movieID, movieIndex }) => {
   return (
     <div
       //position relative for the spinner-position
-      className={`bg-white rounded-sm border border-gray-300 relative ${
+      className={`text-black bg-white rounded-sm border border-gray-300 relative ${
         detailsVisible ? "w-full" : " w-[300px] h-[400px]  m-5"
       }  `}
     >
@@ -76,17 +76,14 @@ const Movie = ({ movieID, movieIndex }) => {
             detailsVisible ? "" : "flex-col"
           }`}
         >
-          <h1>{movieIndex}</h1>
           <img
             src={movieData.poster}
             alt="movie-poster"
             // img width and height adjusted
             style={{ width: "250px", height: "300px" }}
             onClick={() => showDetails()}
-            className={`${
-              !detailsVisible
-                ? "hover:scale-110 transition-all object-contain"
-                : "mt-4"
+            className={`object-contain ${
+              !detailsVisible ? "hover:scale-110 transition-all" : "mt-4"
             }`}
           />
           <div
@@ -115,14 +112,14 @@ const Movie = ({ movieID, movieIndex }) => {
             {/* to do:Button-css-class */}
 
             <NavLink to="/cart">
-              <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all ">
+              <button className="text-white background  opacity-80  absolute bottom-5 right-5 border-2 px-2 hover:bg-red-700 active:text-white hover:scale-110 transition-all ">
                 Buy Tickets
               </button>
             </NavLink>
-
+            {/* text-white background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4 */}
             <button
               onClick={showDetails}
-              className="absolute top-5 right-5 border-2 px-4 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
+              className="w-7 h-7 rounded-full border text-white background opacity-80 absolute top-5 right-5 border-2   active:text-white hover:scale-110 transition-all"
             >
               x
             </button>
@@ -132,7 +129,7 @@ const Movie = ({ movieID, movieIndex }) => {
               className={
                 detailsVisible
                   ? "hidden"
-                  : "background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4"
+                  : "text-white background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4"
               }
             >
               Buy Tickets
