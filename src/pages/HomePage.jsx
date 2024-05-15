@@ -1,9 +1,24 @@
+import Movie from "../components/Movie";
+import movieIDs from "../components/fetch/movieIDs";
 import MyCarousel from "../components/Carousel";
 
 const Homepage = () => {
   return (
     <div>
       <MyCarousel />
+      <div className="flex flex-wrap justify-around m-5">
+        <Movie movieID={movieIDs.movie1} movieIndex={1} />
+        <Movie movieID={movieIDs.movie2} movieIndex={2} />
+        <Movie movieID={movieIDs.movie3} movieIndex={3} />
+        <Movie movieID={movieIDs.movie4} movieIndex={4} />
+      </div>
+      <div className="flex flex-wrap justify-around m-5">
+        <Movie movieID={movieIDs.movie5} movieIndex={5} />
+        <Movie movieID={movieIDs.movie6} movieIndex={6} />
+        <Movie movieID={movieIDs.movie7} movieIndex={7} />
+        <Movie movieID={movieIDs.movie8} movieIndex={8} />
+      </div>
+    
     </div>
   );
 };

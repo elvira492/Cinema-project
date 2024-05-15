@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { UserCircleIcon, ShoppingCartIcon } from "@heroicons/react/24/solid";
 import React from "react";
-
-// z.6 { mobileMenuOpen } PROP von Header(Parent) bekommen
+// z.5 { mobileMenuOpen } PROP von Header(Parent) bekommen
 const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
+  const location = useLocation();
+
   const items = [
     { name: "Home", to: "/", id: 1 },
     { name: "Program", to: "/program", id: 2 },
@@ -12,46 +13,63 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
     { name: "User", to: "/user", id: 5 },
     { name: "Cart", to: "/cart", id: 6 },
   ];
+
   return (
     <nav>
       <ul className="flex flex-col sm:flex-row justify-center items-center gap-x-8">
-        {items.map((item) => {
-          return (
-            <li key={item.id}>
-              {/* Suche User. Ob der aktuelle Eintrag User ist, und mobileMenu true, dann verstecke Icon, wenn false - dann zeige icon-solid*/}
-              {item.name === "User" && (
-                <NavLink to={item.to} className="text-white rounded-md p-2">
-                  {mobileMenuOpen ? (
-                    <UserCircleIcon className="hidden" />
-                  ) : (
-                    <UserCircleIcon className="h-6 w-6 flex" />
-                  )}
-                </NavLink>
-              )}
-              {/*Suche Cart. ob der Eintrag Cart ist und mobileMenu true, dann das selbe wie mit "User" */}
-              {item.name === "Cart" && (
-                <NavLink to={item.to} className="text-white rounded-md p-2">
-                  {mobileMenuOpen ? (
-                    <ShoppingCartIcon className="hidden" />
-                  ) : (
-                    <ShoppingCartIcon className="h-6 w-6 flex" />
-                  )}
-                </NavLink>
-              )}
-              {/* Suche alles außer User und Cart. Falls kein Icon-Link ist, wird der Link-Text angezeigt */}
-              {item.name !== "User" && item.name !== "Cart" && (
-                <NavLink
-                  to={item.to}
-                  className="text-white hover:bg-stone-700 py-2 rounded-md text-sm font-medium flex items-center"
+        {items.map((item) => (
+          <li key={item.id}>
+            {/* Suche User. Ob der aktuelle Eintrag User ist, und mobileMenu true, dann verstecke Icon, wenn false - dann zeige icon-solid*/}
+            {item.name === "User" && (
+              <NavLink
+                to={item.to}
+                className={`text-white rounded-md p-2 ${
+                  location.pathname === item.to ? "text-yellow-300" : ""
+                }`}
+              >
+                {mobileMenuOpen ? (
+                  <UserCircleIcon className="hidden" />
+                ) : (
+                  <UserCircleIcon className="h-6 w-6 flex" />
+                )}
+              </NavLink>
+            )}
+
+            {/*Suche Cart. ob der Eintrag Cart ist und mobileMenu true, dann das selbe wie mit "User" */}
+            {item.name === "Cart" && (
+              <NavLink
+                to={item.to}
+                className={`text-white rounded-md p-2 ${
+                  location.pathname === item.to ? "text-yellow-300" : ""
+                }`}
+              >
+                {mobileMenuOpen ? (
+                  <ShoppingCartIcon className="hidden" />
+                ) : (
+                  <ShoppingCartIcon className="h-6 w-6 flex" />
+                )}
+              </NavLink>
+            )}
+
+            {/* Suche alles außer User und Cart. Falls kein Icon-Link ist, wird der Link-Text angezeigt */}
+            {item.name !== "User" && item.name !== "Cart" && (
+              <NavLink
+                to={item.to}
+                className={`text-white hover:bg-stone-700 py-2 rounded-md text-sm font-medium flex items-center ${
+                  location.pathname === item.to ? "text-yellow-300" : ""
+                }`}
+                onClick={onCloseMenu}
+              >
+                {" "}
+                {/* 
                   onClick={item.name ? onCloseMenu : null} //! beim clicken in mob.version auf alle links- menü schließen :)
                   //onClick={item.name === "Home" ? onCloseMenu : null} schließe menü, wenn auf "Home" geklickt wird
-                >
-                  {item.name}
-                </NavLink>
-              )}
-            </li>
-          );
-        })}
+              */}
+                {item.name}
+              </NavLink>
+            )}
+          </li>
+        ))}
       </ul>
     </nav>
   );
