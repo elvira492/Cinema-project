@@ -39,8 +39,8 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
             {item.name === "Cart" && (
               <NavLink
                 to={item.to}
-                className={`text-white rounded-md p-2 ${
-                  location.pathname === item.to ? "text-red-600" : ""
+                className={`rounded-md p-2 ${
+                  location.pathname === item.to ? "rose" : "text-white"
                 }`}
               >
                 {mobileMenuOpen ? (
@@ -55,8 +55,8 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
             {item.name !== "User" && item.name !== "Cart" && (
               <NavLink
                 to={item.to}
-                className={`text-white hover:bg-stone-400 hover:text-red-500 p-2 rounded-md text-sm font-medium flex items-center ${
-                  location.pathname === item.to ? "text-red-600" : ""
+                className={`hover:bg-stone-400 hover:text-red-500 p-2 rounded-md text-sm font-medium flex items-center ${
+                  location.pathname === item.to ? "rose" : "text-white"
                 }`}
                 onClick={onCloseMenu}
               >
