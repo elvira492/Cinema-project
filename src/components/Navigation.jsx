@@ -24,7 +24,7 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
               <NavLink
                 to={item.to}
                 className={`text-white rounded-md p-2 ${
-                  location.pathname === item.to ? "text-yellow-300" : ""
+                  location.pathname === item.to ? "text-red-600" : ""
                 }`}
               >
                 {mobileMenuOpen ? (
@@ -40,7 +40,7 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
               <NavLink
                 to={item.to}
                 className={`text-white rounded-md p-2 ${
-                  location.pathname === item.to ? "text-yellow-300" : ""
+                  location.pathname === item.to ? "text-red-600" : ""
                 }`}
               >
                 {mobileMenuOpen ? (
@@ -55,8 +55,8 @@ const Navigation = ({ mobileMenuOpen, onCloseMenu }) => {
             {item.name !== "User" && item.name !== "Cart" && (
               <NavLink
                 to={item.to}
-                className={`text-white hover:bg-stone-700 py-2 rounded-md text-sm font-medium flex items-center ${
-                  location.pathname === item.to ? "text-yellow-300" : ""
+                className={`text-white hover:bg-stone-400 hover:text-red-500 p-2 rounded-md text-sm font-medium flex items-center ${
+                  location.pathname === item.to ? "text-red-600" : ""
                 }`}
                 onClick={onCloseMenu}
               >

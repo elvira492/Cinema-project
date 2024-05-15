@@ -5,7 +5,7 @@ const AboutUsPage = () => {
   const centerCoordinates = [52.526597, 13.374156]; // Koordinaten
 
   return (
-    <div className="max-w-xxl">
+    <div className="text-white max-w-xxl pb-32">
       {/* Karte */}
       <div className="mb-12">
         <MapContainer
@@ -67,7 +67,7 @@ const AboutUsPage = () => {
           </div>
         </div>
 
-        {/* Überschrift */}
+        {/* Join */}
         <div className="flex-1">
           <p className="font-semibold text-right  mb-4 ">
             Join this magical adventure in the world of Fantasy Cinema!
@@ -79,21 +79,21 @@ const AboutUsPage = () => {
             erhellen und dich auf eine Reise entführen, die deine
             Vorstellungskraft weit übersteigt."
           </p>
-          <div class="flex justify-center text-center p-4">
+          <div className="flex justify-center text-center p-4">
             <img
               src="/src/images/saal.jpg"
               alt=""
-              class="w-1/3 rounded-lg m-2"
+              className="w-1/3 rounded-lg m-2"
             />
             <img
               src="/src/images/film-projector.jpg"
               alt=""
-              class="w-1/3 rounded-lg m-2"
+              className="w-1/3 rounded-lg m-2"
             />
             <img
               src="/src/images/cinema.jpg"
               alt=""
-              class="w-1/3 rounded-lg m-2 "
+              className="w-1/3 rounded-lg m-2 "
             />
           </div>
         </div>
