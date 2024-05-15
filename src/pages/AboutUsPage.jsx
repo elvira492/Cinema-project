@@ -81,12 +81,12 @@ const AboutUsPage = () => {
           </p>
           <div className="flex justify-center text-center p-4">
             <img
-              src={`${process.env.PUBLIC_URL}/public/images/saal.jpg`}
+              src="/public/static/images/saal.jpg"
               alt=""
               className="w-1/3 rounded-lg m-2"
             />
             <img
-              src={`${process.env.PUBLIC_URL}/public/images/film-projector.jpg`}
+              src={`/public/static/images/film-projector.jpg`}
               alt=""
               className="w-1/3 rounded-lg m-2"
             />
