@@ -81,17 +81,17 @@ const AboutUsPage = () => {
           </p>
           <div className="flex justify-center text-center p-4">
             <img
-              src="/src/images/saal.jpg"
+              src="/public/images/saal.jpg"
               alt=""
               className="w-1/3 rounded-lg m-2"
             />
             <img
-              src="/src/images/film-projector.jpg"
+              src="/public/images/film-projector.jpg"
               alt=""
               className="w-1/3 rounded-lg m-2"
             />
             <img
-              src="/src/images/cinema.jpg"
+              src="/public/images/cinema.jpg"
               alt=""
               className="w-1/3 rounded-lg m-2 "
             />
