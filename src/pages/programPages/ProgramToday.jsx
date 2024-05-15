@@ -9,7 +9,7 @@ function ProgramToday() {
       <h1>
         {todayDate.day} {todayDate.date}.{todayDate.month}.{todayDate.year}
       </h1>
-      <div className="flex flex-wrap justify-around m-5">
+      <div className="flex flex-wrap justify-center m-5">
         <h2>11am</h2>
         <Movie movieID={movieIDs.movie1} movieIndex={1} />
         <h2>2pm</h2>

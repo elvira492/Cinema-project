@@ -11,7 +11,7 @@ const ProgramPage = () => {
   const location = useLocation();
 
   return (
-    <div className="color1">
+    <div className="color1 pb-48">
       <ul className={"flex flex-row justify-center items-center gap-x-8 p-4"}>
         {items.map((item) => {
           return (

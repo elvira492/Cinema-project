@@ -9,7 +9,7 @@ function ProgramTomorrow() {
         {tomorrowDate.day} {tomorrowDate.date}.{tomorrowDate.month}.
         {tomorrowDate.year}
       </h1>
-      <div className="flex flex-wrap justify-around m-5">
+      <div className="flex flex-wrap justify-center m-5">
         <h2>11am</h2>
         <Movie movieID={movieIDs.movie5} movieIndex={5} />
         <h2>2pm</h2>
