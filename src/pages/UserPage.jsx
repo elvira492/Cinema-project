@@ -1,5 +1,12 @@
 const AccountPage = () => {
-  return <div>AccountPage</div>;
+  return (
+    <div
+      className="color1 flex justify-center items-center"
+      style={{ height: "500px" }}
+    >
+      <pCart>AccountPage coming soon..</pCart>
+    </div>
+  );
 };
 
 export default AccountPage;
