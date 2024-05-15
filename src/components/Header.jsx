@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-neutral-800 text-white py-4 sticky top-0 z-10 opacity-90 shadow-xl">
+    <div className="background text-white py-4 sticky top-0 z-10 opacity-80 shadow-xl">
       <div className="container mx-auto flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
           <NavLink to="/">
@@ -51,7 +51,7 @@ const Header = () => {
 
           {/* Mobiles Menü */}
           {mobileMenuOpen && (
-            <div className="bg-neutral-800 text-white py-2 mb-8 absolute top-20 left-0 right-0 overflow-hidden max-h-40 lg:hidden">
+            <div className="py-2 mb-12 absolute top-24 left-0 right-0 overflow-hidden max-h-40 lg:hidden background ">
               <Navigation
                 mobileMenuOpen={mobileMenuOpen}
                 onCloseMenu={handleCloseMenu}

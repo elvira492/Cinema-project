@@ -4,7 +4,7 @@ import MyCarousel from "../components/Carousel";
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="color1 md:pb-32">
       <MyCarousel />
       <div className="flex flex-wrap justify-around m-5">
         <Movie movieID={movieIDs.movie1} movieIndex={1} />
@@ -18,7 +18,6 @@ const Homepage = () => {
         <Movie movieID={movieIDs.movie7} movieIndex={7} />
         <Movie movieID={movieIDs.movie8} movieIndex={8} />
       </div>
-    
     </div>
   );
 };

@@ -9,7 +9,7 @@ function ContactPage() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-8 lg:gap-36 p-8 md:p-16 ">
+    <div className="color1 flex flex-col md:flex-row md:items-start md:justify-center gap-8 lg:gap-36 p-8 pb-32">
       {/* Left */}
       <div className="max-w-lg md:max-w-sm lg:max-w-lg  md:px-16 rounded-md border border-gray-300 lg:py-28 p-12">
         <h3 className="text-xl font-semibold mb-4 text-center">
@@ -37,10 +37,10 @@ function ContactPage() {
           </p>
         </div>
         <div className="flex justify-center">
-          <button className="w-48 px-4 py-2 bg-gray-900 text-white font-semibold rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+          <button className="w-48 px-4 py-2 bg-rose-600 text-white font-semibold rounded-md shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50">
             <a href="mailto:FantasyCinema@gmail.com">Email Us</a>
           </button>
-          <button className="w-48 ml-4 px-4 py-2 bg-gray-900 text-white font-semibold rounded-md shadow-sm hover:bg-gray-500 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-50">
+          <button className="w-48 ml-4 px-4 py-2 bg-neutral-800 bg-rose-600 text-white font-semibold rounded-md shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-50">
             <a href="tel:+555554433 ">Call us </a>
           </button>
         </div>
@@ -48,10 +48,10 @@ function ContactPage() {
       {/* Right */}
       <div className="flex-1 max-w-lg items-center ">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-1xl lg:pb-4">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-1xl lg:pb-4">
             Please leave us a message
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+          <p className="mt-2 text-lg leading-8 text-gray-300">
             Complete the form
           </p>
         </div>
@@ -124,7 +124,7 @@ function ContactPage() {
           <button
             type="submit"
             disabled={state.submitting}
-            className="block w-full rounded-md bg-gray-800 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block w-full rounded-md bg-neutral-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-neutral-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {state.submitting ? "Submit..." : "Submit"}
           </button>

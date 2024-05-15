@@ -62,16 +62,16 @@ const Movie = ({ movieID, movieIndex }) => {
 
   return (
     <div
-      // position relative for the spinner-position
-      className={` border-2 relative ${
-        detailsVisible ? "w-full" : " w-[200px] h-[360px]  m-5"
+      //position relative for the spinner-position
+      className={`bg-white rounded-sm border border-gray-300 relative ${
+        detailsVisible ? "w-full" : " w-[300px] h-[400px]  m-5"
       }  `}
     >
       {" "}
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
       {loaded ? (
         <div
-          className={`flex flex-wrap justify-center p-5 ${
+          className={`bg-white flex flex-wrap justify-center items-center p-5 ${
             detailsVisible ? "" : "flex-col"
           }`}
         >
@@ -80,10 +80,12 @@ const Movie = ({ movieID, movieIndex }) => {
             src={movieData.poster}
             alt="movie-poster"
             // img width and height adjusted
-            style={{ width: "160px", height: "260px" }}
+            style={{ width: "250px", height: "300px" }}
             onClick={() => showDetails()}
             className={`${
-              !detailsVisible ? "hover:scale-110 transition-all" : "mt-4"
+              !detailsVisible
+                ? "hover:scale-110 transition-all object-contain"
+                : "mt-4"
             }`}
           />
           <div
@@ -110,12 +112,12 @@ const Movie = ({ movieID, movieIndex }) => {
             </p>
             <p>little calender-table</p>
             {/* to do:Button-css-class */}
-            <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all">
+            <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all ">
               Buy Tickets
             </button>
             <button
               onClick={showDetails}
-              className="absolute top-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
+              className="absolute top-5 right-5 border-2 px-4 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
             >
               x
             </button>
@@ -124,7 +126,7 @@ const Movie = ({ movieID, movieIndex }) => {
             className={
               detailsVisible
                 ? "hidden"
-                : "border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all mt-4"
+                : "background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4"
             }
           >
             Buy Tickets

@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.height1 {
-  height: 70vh;
-}/* carousel */
-
 body {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 4rem;
+  background-color: #111316;
 } /* für footer position */
+.height1 {
+  height: 70vh;
+} /* carousel */
+.color1 {
+  background-color: #111316;
+  color: white;
+}
+.background {
+  background-color: #111316;
+}
