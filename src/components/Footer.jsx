@@ -12,9 +12,16 @@ const Footer = () => {
         <p>Wonder Way 6, Fantasy Harbor</p>
       </div>
       <div className="flex items-center gap-1">
-        <SocialIcon url="https://www.instagram.com/" bgColor="rgb(225 29 72)" />
-
-        <SocialIcon url="https://www.facebook.com/" bgColor="#4b4b4d" />
+        <SocialIcon
+          url="https://www.instagram.com/"
+          target="_blank"
+          bgColor="rgb(225 29 72)
+        />
+        <SocialIcon
+          url="https://www.facebook.com/"
+          target="_blank"
+          bgColor="#4b4b4d
+        />
       </div>
     </div>
   );
