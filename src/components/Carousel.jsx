@@ -22,7 +22,7 @@ const MyCarousel = () => {
       <div className="height1 flex items-center justify-center overflow-y-auto">
         <img
           src="/src/images/portrait-young-little-boy.jpg"
-          className="object-cover h-full w-full" //"overflow-y-auto max-h-48
+          className="object-cover h-full w-full"
           alt="Bild 3"
         />
       </div>
