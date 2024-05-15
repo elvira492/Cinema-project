@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import fetchMovieData from "../components/fetch/FetchMovieData";
 import { SquareLoader } from "react-spinners";
+import { NavLink } from "react-router-dom";
 
 // Id is for fetching the movie data, but index is for the self-defined order of the movies (added to the movieData)
 // eslint-disable-next-line react/prop-types
@@ -112,9 +113,13 @@ const Movie = ({ movieID, movieIndex }) => {
             </p>
             <p>little calender-table</p>
             {/* to do:Button-css-class */}
-            <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all ">
-              Buy Tickets
-            </button>
+
+            <NavLink to="/cart">
+              <button className=" absolute bottom-5 right-5 border-2 px-2 hover:bg-slate-300 active:text-white hover:scale-110 transition-all ">
+                Buy Tickets
+              </button>
+            </NavLink>
+
             <button
               onClick={showDetails}
               className="absolute top-5 right-5 border-2 px-4 hover:bg-slate-300 active:text-white hover:scale-110 transition-all"
@@ -122,15 +127,17 @@ const Movie = ({ movieID, movieIndex }) => {
               x
             </button>
           </div>
-          <button
-            className={
-              detailsVisible
-                ? "hidden"
-                : "background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4"
-            }
-          >
-            Buy Tickets
-          </button>
+          <NavLink to="/cart">
+            <button
+              className={
+                detailsVisible
+                  ? "hidden"
+                  : "background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4"
+              }
+            >
+              Buy Tickets
+            </button>
+          </NavLink>
         </div>
       ) : (
         <SquareLoader

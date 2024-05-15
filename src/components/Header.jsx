@@ -6,7 +6,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import Navigation from "./Navigation";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,6 +19,7 @@ const Header = () => {
   const handleCloseMenu = () => {
     setMobileMenuOpen(false);
   };
+  const location = useLocation();
 
   return (
     <div className="background text-white py-4 sticky top-0 z-10 opacity-80 shadow-xl">
@@ -63,17 +64,21 @@ const Header = () => {
           {/* Hinzugefügte outline Icons neben Burger Button für User und Cart */}
           <NavLink
             to="/user"
-            className="text-white ml-4"
+            className={`ml-4 ${
+              location.pathname === "/user" ? "rose" : "text-white"
+            }`}
             onClick={handleCloseMenu}
           >
-            <UserCircleIcon className="h-6 w-6 text-white" />
+            <UserCircleIcon className="h-6 w-6" />
           </NavLink>
           <NavLink
             to="/cart"
-            className="text-white ml-4"
+            className={`ml-4 ${
+              location.pathname === "/cart" ? "rose" : "text-white"
+            }`}
             onClick={handleCloseMenu}
           >
-            <ShoppingCartIcon className="h-6 w-6 text-white" />
+            <ShoppingCartIcon className="h-6 w-6 " />
           </NavLink>
         </div>
 
