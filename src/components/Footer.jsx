@@ -15,12 +15,12 @@ const Footer = () => {
         <SocialIcon
           url="https://www.instagram.com/"
           target="_blank"
-          bgColor="rgb(225 29 72)
+          bgColor="rgb(225 29 72)"
         />
         <SocialIcon
           url="https://www.facebook.com/"
           target="_blank"
-          bgColor="#4b4b4d
+          bgColor="#4b4b4d"
         />
       </div>
     </div>

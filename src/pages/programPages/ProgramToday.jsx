@@ -4,8 +4,6 @@ import movieIDs from "../../components/fetch/movieIDs";
 import { todayDate } from "../../components/date";
 
 function ProgramToday() {
-  console.log(todayDate);
-
   return (
     <div>
       <h1>
