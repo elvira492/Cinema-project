@@ -91,7 +91,7 @@ const AboutUsPage = () => {
               className="w-1/3 rounded-lg m-2"
             />
             <img
-              src={`${process.env.PUBLIC_URL}/public/images/cinema.jpg`}
+              src={`/public/static/images/cinema.jpg`}
               alt=""
               className="w-1/3 rounded-lg m-2 "
             />
