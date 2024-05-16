@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # API-key
-src/components/fetch/apiKey.js
+# src/components/fetch/apiKey.js
