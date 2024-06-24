@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 
 import Layout from "./components/Layout";
+import ScrollToTop from "./utils/ScrollToTop";
 // statt Layout importieren = Header und Footer importieren
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       {/* Header */}
       <Layout>
+        <ScrollToTop />
         {/* aktives Kind: Outlet */}
         <Outlet />
       </Layout>

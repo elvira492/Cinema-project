@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# API-key
-# src/components/fetch/apiKey.js
+#dotenv
+.env
