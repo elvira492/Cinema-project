@@ -64,7 +64,7 @@ const Movie = ({ movieID, movieIndex }) => {
   return (
     <div
       //position relative for the spinner-position
-      className={`text-black bg-white rounded-sm border border-gray-300 relative ${
+      className={`flex justify-center items-center text-black bg-white rounded-sm border-4 border-gray-300 relative ${
         detailsVisible ? "w-full" : " w-[300px] h-[400px]  m-5"
       }  `}
     >
@@ -72,7 +72,7 @@ const Movie = ({ movieID, movieIndex }) => {
       {/* If data is fetched/loaded, it is rendered otherwise the spinner is displayed */}
       {loaded ? (
         <div
-          className={`bg-white flex flex-wrap justify-center items-center p-5 ${
+          className={` flex flex-wrap justify-center items-center bg-red-950 p-3   ${
             detailsVisible ? "" : "flex-col"
           }`}
         >
@@ -80,10 +80,10 @@ const Movie = ({ movieID, movieIndex }) => {
             src={movieData.poster}
             alt="movie-poster"
             // img width and height adjusted
-            style={{ width: "250px", height: "300px" }}
+            style={{ width: "200px", height: "300px" }}
             onClick={() => showDetails()}
-            className={`object-contain ${
-              !detailsVisible ? "hover:scale-110 transition-all" : "mt-4"
+            className={`object-fill ${
+              !detailsVisible ? "hover:scale-110 	 transition-all" : "mt-4"
             }`}
           />
           <div
@@ -119,7 +119,9 @@ const Movie = ({ movieID, movieIndex }) => {
             {/* text-white background opacity-80 border-2 px-6 hover:bg-red-700 active:text-white hover:scale-110 transition-all mt-4 */}
             <button
               onClick={showDetails}
-              className="w-7 h-7 rounded-full border text-white background opacity-80 absolute top-5 right-5 border-2   active:text-white hover:scale-110 transition-all"
+              className="absolute top-5 right-5 w-5 h-5 pb-1 rounded-full opacity-80  border-2 text-xs text-white  hover:bg-red-700 
+            background
+             hover:scale-110 transition-all"
             >
               x
             </button>
